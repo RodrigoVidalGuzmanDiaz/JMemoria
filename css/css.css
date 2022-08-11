@@ -10,20 +10,33 @@
     margin: auto;
     justify-content: center;
 }
-
-.fruta {
+.frutaContenedor{
     width: 100px;
     height: 100px;
-    background-color: orange;
     margin: 5px;
-    font-size: 40px;
+    background-color: #2980B9;
     cursor: pointer;
+}
+.fruta{
+    width: 100%;
+    height: 100%;
+    background-color: orange;
+    font-size: 0px;
+    cursor: pointer;
+
+    transition: all 1s;
+    transform-style: preserve-3d;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+
 }
 
-.activar {
-    background-color: green;
+
+.activarIMG{
+    font-size: 30px;
+    transition: 0.37s;
 }
+

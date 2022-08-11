@@ -13,16 +13,19 @@ function agregar_datos_al_DOM(){
 
     todas_las_frutas.forEach(function(elemento,indice){
 
-        let divContenedor = document.createElement("div");
+        let contenedor = document.createElement("div");
 
-        divContenedor.innerHTML = 
-        '<div class="fruta">' +
-        elemento +
+        contenedor.innerHTML = 
+        '<div class="frutaContenedor">' +
+            '<div class="fruta" id="fruta">' +
+                elemento +
+            '</div>' +
         '</div>';
 
-        root.appendChild(divContenedor  );
+        root.appendChild(contenedor);
 
-    });
+        }
+    );
 
 }
 agregar_datos_al_DOM();
@@ -30,14 +33,13 @@ agregar_datos_al_DOM();
 
 // FUNCIÓN DE SELECCIÓN
 
-let datos_del_dom = document.querySelectorAll(".fruta");
+let frutaVista = document.querySelectorAll(".fruta");
+let frutaContenedor = document.querySelectorAll(".frutaContenedor");
 
 function activar(){
-    this.classList.add("activar");
+    this.classList.add("activarIMG");
 }
-
-datos_del_dom.forEach(function(elemento, indice){
+frutaVista.forEach(function(elemento, indice){
     
     elemento.addEventListener('click', activar);
-
-});
+})
