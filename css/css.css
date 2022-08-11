@@ -1,0 +1,29 @@
+#root {
+    width: 55%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-color: red black green orange;
+    border-width: 10px;
+    border-style: solid;
+    margin: auto;
+    justify-content: center;
+}
+
+.fruta {
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    margin: 5px;
+    font-size: 40px;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.activar {
+    background-color: green;
+}
