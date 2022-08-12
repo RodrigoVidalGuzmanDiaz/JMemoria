@@ -1,45 +1,63 @@
+
+
 let root = document.querySelector("#root");
+let frutas = ["🍇", "🍈", "🍉", "🍊", "🍋", "🍌", "🍍", "🥭", "🍎", "🍇", "🍈", "🍉", "🍊", "🍋", "🍌", "🍍", "🥭", "🍎"];
+
+//FUNCION AGREGAR AL DOM
+
+function agregar_al_DOM(){
+
+    frutas.forEach(function (elemento){
+
+        let divContenedor = document.createElement("div");
+
+        divContenedor.innerHTML = 
+            '<div class="fruta">' + 
+                elemento + 
+            '</div>';
 
 
-// BASE DE DATOS
-let frutas = ['🍇','🍈','🍉','🍊','🍋','🍌','🍍','🥭','🍎'];
-let frutas2 = ['🍇','🍈','🍉','🍊','🍋','🍌','🍍','🥭','🍎'];
+    root.appendChild(divContenedor); 
+        
+        });
 
-let todas_las_frutas = frutas.concat(frutas2);
-
-
-function agregar_datos_al_DOM(){
-
-
-    todas_las_frutas.forEach(function(elemento,indice){
-
-        let contenedor = document.createElement("div");
-
-        contenedor.innerHTML = 
-        '<div class="frutaContenedor">' +
-            '<div class="fruta" id="fruta">' +
-                elemento +
-            '</div>' +
-        '</div>';
-
-        root.appendChild(contenedor);
-
-        }
-    );
-
+    //ford
+  
 }
-agregar_datos_al_DOM();
+
+frutas.sort(function(){return 0.5  - Math.random()});
+
+agregar_al_DOM();
 
 
-// FUNCIÓN DE SELECCIÓN
 
-let frutaVista = document.querySelectorAll(".fruta");
-let frutaContenedor = document.querySelectorAll(".frutaContenedor");
+
+
+
+//FUNCION ACTIVAR LAS LETRAS
+
+let tarjetasFrutas = document.querySelectorAll(".fruta");
 
 function activar(){
     this.classList.add("activarIMG");
-}
-frutaVista.forEach(function(elemento, indice){
+
     
-    elemento.addEventListener('click', activar);
-})
+
+}
+
+tarjetasFrutas.forEach(function(elemento){
+    
+    elemento.addEventListener('click', activar )
+});
+
+
+let iniciarJuego = document.getElementById('iniciar')
+
+
+iniciarJuego.innerHTML = '<div>'+'<a id="bt_niciar">'+'Iniciar Juego'+'</a>'+'</div>';
+
+function activarJuego(){
+    iniciarJuego.classList.add('quitar')
+    root.classList.add('agregar')
+}
+iniciarJuego.addEventListener('click', activarJuego)
